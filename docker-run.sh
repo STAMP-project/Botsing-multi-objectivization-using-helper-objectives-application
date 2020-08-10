@@ -3,16 +3,12 @@ LIMIT=$2
 # IFS=$'\n'
 # Stop the container from previous experiments
 docker stop exrunner-container
-echo "1"
 # Remove old containers
 docker rm exrunner-container
-echo "1"
 # Remove previous docker image
 docker rmi tudelft/exrunner
-echo "1"
 # Build a new docker image
 docker image build -t tudelft/exrunner $(pwd)
-echo "4"
 # Execution
 # After building the the image, we run the container
 docker run -dit --name exrunner-container  \
