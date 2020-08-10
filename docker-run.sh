@@ -3,18 +3,20 @@ LIMIT=$2
 # IFS=$'\n'
 # Stop the container from previous experiments
 docker stop exrunner-container
+echo "1"
 # Remove old containers
 docker rm exrunner-container
+echo "1"
 # Remove previous docker image
 docker rmi tudelft/exrunner
+echo "1"
 # Build a new docker image
 docker image build -t tudelft/exrunner $(pwd)
+echo "4"
 # Execution
 # After building the the image, we run the container
 docker run -dit --name exrunner-container  \
---mount type=bind,source="$(pwd)/$experiment/consoleLog",target=/reproduction/$experiment/consoleLog \
---mount type=bind,source="$(pwd)/$experiment/logs",target=/reproduction/$experiment/logs \
---mount type=bind,source="$(pwd)/$experiment/results",target=/reproduction/$experiment/results \
+--mount type=bind,source="$(pwd)/$experiment",target=/reproduction/$experiment \
 --mount type=bind,source="$(pwd)/crashes",target=/reproduction/crashes \
 --mount type=bind,source="$(pwd)/bins",target=/reproduction/bins \
 tudelft/exrunner

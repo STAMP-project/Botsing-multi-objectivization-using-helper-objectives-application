@@ -15,4 +15,3 @@ RUN         dnf install procps --assumeyes
 WORKDIR /reproduction
 #
 COPY lib /reproduction/lib
-COPY . /reproduction/
