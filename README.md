@@ -71,26 +71,6 @@ The generated test cases will store in `crash-reproduction-moho/results/` direct
 
 The important data about the executions and the search process will be saved in `crash-reproduction-moho/results/results.csv`.
 
-### Run `MOHO-NSGA-II`:
-
-**(I) Prepare Input:**
-Run input generator with the following parameters:
-
-```
-python input-generator/__init__.py crash-reproduction-moho/inputs.csv WeightedSum:TestLen:CallDiversity <number_of_runs> NSGA_II
-```
-Since we repeated each execution for 30 times, in our study, we set the `<number_of_runs>` to 30.
-
-This command will update the `input.csv` in `crash-reproduction-moho` directory.
-
-**(II) Run Botsing with Docker:**
-Run the following bash file:
-```
-. docker-run.sh crash-reproduction-moho <number_of_parallel_executions>
-```
-The generated test cases will store in `crash-reproduction-moho/results/` directory.
-
-The important data about the executions and the search process will be saved in `crash-reproduction-moho/results/results.csv`.
 
 ### Run `MOHO-SPEA2`:
 
