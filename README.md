@@ -198,3 +198,69 @@ Run the following bash file:
 The generated test cases will store in `crash-reproduction-moho/results/` directory.
 
 The important data about the executions and the search process will be saved in `crash-reproduction-moho/results/results.csv`.
+
+## Data Analysis
+
+
+The raw CSV files used in this analysis is available in `crash-reproduction-moho/results/results.csv` directory.
+
+### RQ1
+
+go to r-scripts directory:
+
+```
+cd analysis/r-scripts
+```
+Run `rq1-internal-assessment.R`:
+
+```
+RScript rq1-internal-assessment.R 
+```
+The results of friedman test will be printed.
+
+To plot the RQ1 figures, run `rq1-plots.R`
+
+```
+RScript rq1-plots.R 
+```
+The output will be stored in `analysis/figures` directory
+
+
+### RQ2
+
+To plot the RQ2 figures, run `rq2-plots.R`
+
+```
+RScript rq2-plots.R 
+```
+
+The output will be stored in `analysis/figures` directory
+
+
+To calculate the summary csv for detecting the corrolation between crash reproductio and exception name + number of frames, run `rq2-summary.R`
+
+```
+Rscript rq2-summary.R 
+```
+
+The result will be saved as `summary.csv` in the `analysis` directory.
+
+
+### RQ3
+
+To plot overall efficiency comparison, run `rq3-overall.R`
+
+```
+Rscript rq3-overall.R 
+
+```
+
+The output will be stored in `analysis/figures` directory
+
+To calculate the effect sizes run `rq3-effect-size.R`
+
+```
+Rscript rq3-effect-size.R 
+```
+
+The table will be printed

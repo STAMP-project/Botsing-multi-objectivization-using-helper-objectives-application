@@ -1,0 +1,6 @@
+"Friedman chi-squared"
+"statistic" "26.1402597402597"
+"parameter" "4"
+"p.value" "2.96491894915854e-05"
+"method" "Friedman rank sum test"
+"data.name" "factor(dependent), factor(groups) and factor(blocks)"
